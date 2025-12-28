@@ -1,19 +1,23 @@
 package com.evanesce.repository;
 
-import java.util.List;
+import com.evanesce.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import com.evanesce.entity.User;
+
+import java.util.Optional;
 
 @Repository
 public interface UserDao extends JpaRepository<User, String> {
 
-	public List<User> findByEmailAndPassword(String email, String password);
+    Optional<User> findByEmail(String email);
 
-	public List<User> findByEmail(String email);
+    Optional<User> findByPhone(String phone);
 
-	public List<User> findByPhone(String phone);
+    Optional<User> findByEmailAndSecurityQuesAndSecurityAns(
+            String email,
+            String securityQues,
+            String securityAns
+    );
 
-	public List<User> findByEmailAndSecurityQuesAndSecurityAns(String email, String securityQues, String securityAns);
-
+    boolean existsByEmail(String email);
 }
