@@ -1,0 +1,19 @@
+# ===== IntelliJ IDEA =====
+.idea/
+*.iml
+
+# ===== Eclipse =====
+.settings/
+.classpath
+.project
+.factorypath
+
+# ===== Maven =====
+target/
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== Logs =====
+*.log
